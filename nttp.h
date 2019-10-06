@@ -31,7 +31,7 @@ typedef VOID (NTAPI *PTP_ALPC_CALLBACK_EX)(
     _In_ PVOID ApcContext
     );
 
-#if (PHNT_VERSION >= PHNT_VISTA)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
 
 // private
 _Check_return_
@@ -69,7 +69,7 @@ TpSetPoolMinThreads(
     _In_ LONG MinThreads
     );
 
-#if (PHNT_VERSION >= PHNT_WIN7)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN7)
 // rev
 NTSYSAPI
 NTSTATUS
@@ -80,7 +80,7 @@ TpQueryPoolStackInformation(
     );
 #endif
 
-#if (PHNT_VERSION >= PHNT_WIN7)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN7)
 // rev
 NTSYSAPI
 NTSTATUS

@@ -1084,7 +1084,7 @@ typedef enum _THREAD_WORKLOAD_CLASS
 
 // Processes
 
-#if (PHNT_MODE != PHNT_MODE_KERNEL)
+#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
 
 NTSYSCALLAPI
 NTSTATUS
@@ -1182,7 +1182,7 @@ NtQueryInformationProcess(
     _Out_opt_ PULONG ReturnLength
     );
 
-#if (PHNT_VERSION >= PHNT_WS03)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WS03)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -1195,7 +1195,7 @@ NtGetNextProcess(
     );
 #endif
 
-#if (PHNT_VERSION >= PHNT_WS03)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WS03)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -1230,7 +1230,7 @@ NtQueryPortInformationProcess(
 
 // Threads
 
-#if (PHNT_MODE != PHNT_MODE_KERNEL)
+#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
 
 NTSYSCALLAPI
 NTSTATUS
@@ -1391,7 +1391,7 @@ NtQueueApcThread(
     _In_opt_ PVOID ApcArgument3
     );
 
-#if (PHNT_VERSION >= PHNT_WIN7)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN7)
 
 #define APC_FORCE_THREAD_SIGNAL ((HANDLE)1) // UserApcReserveHandle
 
@@ -1408,7 +1408,7 @@ NtQueueApcThreadEx(
     );
 #endif
 
-#if (PHNT_VERSION >= PHNT_WIN8)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN8)
 
 // rev
 NTSYSCALLAPI
@@ -1433,7 +1433,7 @@ NtWaitForAlertByThreadId(
 
 // User processes and threads
 
-#if (PHNT_MODE != PHNT_MODE_KERNEL)
+#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
 
 // Attributes
 
@@ -1744,7 +1744,7 @@ typedef struct _PS_CREATE_INFO
 #define PROCESS_CREATE_FLAGS_EXTENDED_UNKNOWN 0x00000400
 // end_rev
 
-#if (PHNT_VERSION >= PHNT_VISTA)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -1772,7 +1772,7 @@ NtCreateUserProcess(
 #define THREAD_CREATE_FLAGS_INITIAL_THREAD 0x00000080
 // end_rev
 
-#if (PHNT_VERSION >= PHNT_VISTA)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -1795,7 +1795,7 @@ NtCreateThreadEx(
 
 // Job objects
 
-#if (PHNT_MODE != PHNT_MODE_KERNEL)
+#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
 
 // JOBOBJECTINFOCLASS
 // Note: We don't use an enum since it conflicts with the Windows SDK.
@@ -2023,7 +2023,7 @@ NtCreateJobSet(
     _In_ ULONG Flags
     );
 
-#if (PHNT_VERSION >= PHNT_THRESHOLD)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_THRESHOLD)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -2036,7 +2036,7 @@ NtRevertContainerImpersonation(
 
 // Reserve objects
 
-#if (PHNT_MODE != PHNT_MODE_KERNEL)
+#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
 
 // private
 typedef enum _MEMORY_RESERVE_TYPE
@@ -2046,7 +2046,7 @@ typedef enum _MEMORY_RESERVE_TYPE
     MemoryReserveTypeMax
 } MEMORY_RESERVE_TYPE;
 
-#if (PHNT_VERSION >= PHNT_WIN7)
+#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN7)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
