@@ -4756,6 +4756,7 @@ RtlReportSilentProcessExit(
 
 // Vectored Exception Handlers
 
+/*
 NTSYSAPI
 PVOID
 NTAPI
@@ -4785,6 +4786,7 @@ NTAPI
 RtlRemoveVectoredContinueHandler(
     _In_ PVOID Handle
     );
+*/
 
 // Random
 
@@ -6028,6 +6030,7 @@ RtlSetSaclSecurityDescriptor(
     _In_opt_ BOOLEAN SaclDefaulted
     );
 
+/*
 NTSYSAPI
 NTSTATUS
 NTAPI
@@ -6037,6 +6040,7 @@ RtlGetSaclSecurityDescriptor(
     _Out_ PACL *Sacl,
     _Out_ PBOOLEAN SaclDefaulted
     );
+*/
 
 NTSYSAPI
 NTSTATUS
