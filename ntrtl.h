@@ -2012,7 +2012,7 @@ RtlStringFromGUID(
     _Out_ PUNICODE_STRING GuidString
     );
 
-#if (defined(PHNT_COMPILE) || HNT_VERSION >= PHNT_WINBLUE)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_WINBLUE)
 
 // rev
 NTSYSAPI
