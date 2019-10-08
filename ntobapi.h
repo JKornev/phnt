@@ -119,7 +119,7 @@ typedef struct _OBJECT_HANDLE_FLAG_INFORMATION
 
 // Objects, handles
 
-#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
+#if (defined(PHNT_COMPILE) || PHNT_MODE != PHNT_MODE_KERNEL)
 
 NTSYSCALLAPI
 NTSTATUS
@@ -203,7 +203,7 @@ NtWaitForMultipleObjects(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WS03)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_WS03)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -243,7 +243,7 @@ NtClose(
     _In_ HANDLE Handle
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_THRESHOLD)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_THRESHOLD)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -257,7 +257,7 @@ NtCompareObjects(
 
 // Directory objects
 
-#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
+#if (defined(PHNT_COMPILE) || PHNT_MODE != PHNT_MODE_KERNEL)
 
 NTSYSCALLAPI
 NTSTATUS
@@ -268,7 +268,7 @@ NtCreateDirectoryObject(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN8)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_WIN8)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -313,9 +313,9 @@ NtQueryDirectoryObject(
 
 // Private namespaces
 
-#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
+#if (defined(PHNT_COMPILE) || PHNT_MODE != PHNT_MODE_KERNEL)
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_VISTA)
 
 NTSYSCALLAPI
 NTSTATUS
@@ -350,7 +350,7 @@ NtDeletePrivateNamespace(
 
 // Symbolic links
 
-#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
+#if (defined(PHNT_COMPILE) || PHNT_MODE != PHNT_MODE_KERNEL)
 
 NTSYSCALLAPI
 NTSTATUS

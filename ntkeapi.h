@@ -127,7 +127,7 @@ typedef enum _KPROFILE_SOURCE
 
 #endif
 
-#if (PHNT_COMPILE == 1 || PHNT_MODE != PHNT_MODE_KERNEL)
+#if (defined(PHNT_COMPILE) || PHNT_MODE != PHNT_MODE_KERNEL)
 
 NTSYSCALLAPI
 NTSTATUS
@@ -138,7 +138,7 @@ NtCallbackReturn(
     _In_ NTSTATUS Status
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_VISTA)
 //Note: conflicts with FlushProcessWriteBuffers
 //NTSYSCALLAPI
 //VOID

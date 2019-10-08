@@ -606,7 +606,7 @@ typedef struct _ALPC_MESSAGE_HANDLE_INFORMATION
 
 // begin_private
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_VISTA)
 
 // System calls
 
@@ -770,7 +770,7 @@ NtAlpcConnectPort(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN8)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_WIN8)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -840,7 +840,7 @@ NtAlpcImpersonateClientOfPort(
     _In_ PVOID Flags
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_THRESHOLD)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_THRESHOLD)
 NTSYSCALLAPI
 NTSTATUS
 NTAPI
@@ -931,7 +931,7 @@ AlpcUnregisterCompletionList(
     _In_ HANDLE PortHandle
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_WIN7)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_WIN7)
 // rev
 NTSYSAPI
 NTSTATUS

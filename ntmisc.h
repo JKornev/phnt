@@ -58,7 +58,7 @@ NtTraceEvent(
     _In_ PVOID Fields
     );
 
-#if (PHNT_COMPILE == 1 || PHNT_VERSION >= PHNT_VISTA)
+#if (defined(PHNT_COMPILE) || PHNT_VERSION >= PHNT_VISTA)
 // private
 NTSYSCALLAPI
 NTSTATUS
